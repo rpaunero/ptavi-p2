@@ -21,8 +21,9 @@ for linea in lineas:
 			resultado = calc.plus(int(resultado), int(elemento))
 	print(resultado)
 	elif dato[0] == "resta":
+		result = calc.minus(int(dato[1]), int(dato[2]))
 		for elemento in dato[1:]:
-			resultado = calc.minus(int(resultado), int(elemento))
+			resultado = calc.minus(int(result), int(elemento))
 	print(resultado)
 	elif dato[0] == "divide":
 		for elemento in dato[1:]:
