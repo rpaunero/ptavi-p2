@@ -7,14 +7,32 @@ import calcoohija
 fichero = sys.argv[1]
 fich = open(fichero,'r')
 lineas = fich.readlines()
+calc = calcoohija.CalculadoraHija()
 
+resultado = 0
 for linea in lineas:
 	linea = linea[:-1]
-	for elemento in linea:
-		if elemento[0] == "suma":
-			resultado = calc.plus(elemento[1], elemento[2])
-		elif elemento[0] == "resta":
-		elif elemento[0] == "divide":
-		elif elemento[0] == "multiplica":
-
-print(lines)
+	#print(linea)
+	dato = linea.split(',')
+	#print(dato)
+	if dato[0] == "suma":
+		#print("linea[0] = suma")
+		for elemento in dato[1:]:
+			resultado = calc.plus(int(resultado), int(elemento))
+	print(resultado)
+	elif dato[0] == "resta":
+		for elemento in dato[1:]:
+			resultado = calc.minus(int(resultado), int(elemento))
+	print(resultado)
+	elif dato[0] == "divide":
+		for elemento in dato[1:]:
+			if elemento == 0:
+				sys.exit("Division by zero is not allowed")
+			else:
+				resultado = calc.div(int(resultado), int(elemento))
+	print(resultado)
+	elif dato[0] == "multiplica":
+		for elemento in dato[1:]:
+			resultado = calc.mult(int(resultado), int(elemento))
+	print(resultado)
+#print(lines)
