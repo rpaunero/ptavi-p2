@@ -9,17 +9,15 @@ fich = open(fichero,'r')
 lineas = fich.readlines()
 calc = calcoohija.CalculadoraHija()
 
-result = 0
 resultado_suma = 0
 resultado_resta = 0
 resultado_division = 0
 resultado_multiplicacion = 0
 for linea in lineas:
-	print(linea)
+	#print(linea)
 	linea = linea[:-1]
 	dato = linea.split(',')
 	if dato[0] == "suma":
-		#print("linea[0] = suma")
 		for elemento in dato[1:]:
 			resultado_suma = calc.plus(int(resultado_suma), int(elemento))
 		print('suma= ',resultado_suma)
@@ -41,4 +39,3 @@ for linea in lineas:
 		for elemento in dato[3:]:
 			resultado_multiplicacion = calc.mult(int(resultado_multiplicacion), int(elemento))
 		print('multiplicacion=', resultado_multiplicacion)
-#print(lines)
