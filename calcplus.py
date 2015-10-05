@@ -4,10 +4,11 @@
 import sys
 import calcoohija
 
-def operacion (dato):
-    dicc = {"suma": calc.plus, "resta": calc.minus, "multiplica": calc.mult, "divide": calc.div}
 
-    print(dato)
+def operacion(dato):
+    dicc = {"suma": calc.plus, "resta": calc.minus,
+            "multiplica": calc.mult, "divide": calc.div}
+
     if dato[0] == "suma":
         func = calc.plus
     elif dato[0] == "resta":
@@ -24,7 +25,7 @@ def operacion (dato):
         except ValueError:
             print("Error de valor en esta línea")
             break
-    print(resultado) 
+    print(resultado)
 
 fichero = sys.argv[1]
 fich = open(fichero, 'r')
@@ -38,5 +39,3 @@ for linea in lineas:
     dato = linea.split(',')
     operador = dato[0]
     resultado = operacion(dato)
-  
-
