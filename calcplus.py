@@ -37,12 +37,6 @@ for linea in lineas:
     linea = linea[:-1]
     dato = linea.split(',')
     operador = dato[0]
-    if operador == "suma":
-        resultado = operacion(dato)
-    if operador == "resta":
-        resultado = operacion(dato)
-    if operador == "divide":
-       resultado = operacion(dato)
-    if operador == "multiplica":
-       resultado = operacion(dato)
+    resultado = operacion(dato)
+  
 
