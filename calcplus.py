@@ -4,35 +4,45 @@
 import sys
 import calcoohija
 
+def operacion (dato):
+    dicc = {"suma": calc.plus, "resta": calc.minus, "multiplica": calc.mult, "divide": calc.div}
+
+    print(dato)
+    if dato[0] == "suma":
+        func = calc.plus
+    elif dato[0] == "resta":
+        func = calc.minus
+    elif dato[0] == "multiplica":
+        func = calc.mult
+    elif dato[0] == "divide":
+        func = calc.div
+    resultado = dato[1]
+    for elemento in dato[2:]:
+        try:
+            funcion = dicc[dato[0]]
+            resultado = funcion(int(resultado), int(elemento))
+        except ValueError:
+            print("Error de valor en esta línea")
+            break
+    print(resultado) 
 
 fichero = sys.argv[1]
 fich = open(fichero, 'r')
 lineas = fich.readlines()
 calc = calcoohija.CalculadoraHija()
 
+
 resultado = 0
 for linea in lineas:
     linea = linea[:-1]
     dato = linea.split(',')
-    if dato[0] == "suma":
-        for elemento in dato[1:]:
-            resultado = calc.plus(int(resultado), int(elemento))
-        print(resultado)
-    if dato[0] == "resta":
-        resultado = calc.minus(int(dato[1]), int(dato[2]))
-        for elemento in dato[3:]:
-            resultado = calc.minus(int(resultado), int(elemento))
-        print(resultado)
-    if dato[0] == "divide":
-        resultado = dato[1]
-        for elemento in dato[2:]:
-            if elemento == 0:
-                sys.exit("Division by zero is not allowed")
-            else:
-                resultado = calc.div(int(resultado), int(elemento))
-        print(resultado)
-    if dato[0] == "multiplica":
-        resultado = calc.mult(int(dato[1]), int(dato[2]))
-        for elemento in dato[3:]:
-            resultado = calc.mult(int(resultado), int(elemento))
-        print(resultado)
+    operador = dato[0]
+    if operador == "suma":
+        resultado = operacion(dato)
+    if operador == "resta":
+        resultado = operacion(dato)
+    if operador == "divide":
+       resultado = operacion(dato)
+    if operador == "multiplica":
+       resultado = operacion(dato)
+
