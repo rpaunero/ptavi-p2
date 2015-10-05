@@ -4,6 +4,7 @@
 import sys
 import calcoohija
 
+calc = calcoohija.CalculadoraHija()
 
 def operacion(dato):
     dicc = {"suma": calc.plus, "resta": calc.minus,
@@ -27,16 +28,16 @@ def operacion(dato):
             break
     print(resultado)
 
+if __name__ == "__main__":
+    fichero = sys.argv[1]
+    fich = open(fichero, 'r')
+    lineas = fich.readlines()
+    #calc = calcoohija.CalculadoraHija()
 
-fichero = sys.argv[1]
-fich = open(fichero, 'r')
-lineas = fich.readlines()
-calc = calcoohija.CalculadoraHija()
 
-
-resultado = 0
-for linea in lineas:
-    linea = linea[:-1]
-    dato = linea.split(',')
-    operador = dato[0]
-    resultado = operacion(dato)
+    resultado = 0
+    for linea in lineas:
+        linea = linea[:-1]
+        dato = linea.split(',')
+        operador = dato[0]
+        resultado = operacion(dato)
