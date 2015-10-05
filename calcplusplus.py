@@ -5,12 +5,11 @@ import csv
 import calcoohija
 
 calc = calcoohija.CalculadoraHija()
-
+resultado = 0
 
 with open(sys.argv[1]) as fichero:
     contenido = csv.reader(fichero)
-    
-    resultado = 0
+
     for row in contenido:
         if row[0] == "suma":
             for elemento in row[1:]:
