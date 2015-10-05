@@ -10,7 +10,10 @@ class CalculadoraHija(calcoo.Calculadora):
         return op1 * op2
 
     def div(self, op1, op2):
-        return op1 / op2
+        if op2 == 0:
+            sys.exit("Division by zero is not allowed")
+        else:
+            return op1 / op2
 
 if __name__ == "__main__":
     try:
@@ -28,8 +31,5 @@ if __name__ == "__main__":
     elif sys.argv[2] == "multiplica":
         result = calc.mult(operando1, operando2)
     elif sys.argv[2] == "divide":
-            if operando2 == 0:
-                sys.exit("Division by zero is not allowed")
-            else:
-                result = calc.div(operando1, operando2)
+        result = calc.div(operando1, operando2)
     print(result)
