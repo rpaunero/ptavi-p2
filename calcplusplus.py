@@ -2,16 +2,15 @@
 
 import sys
 import csv
+import calcoohija
 import calcplus
 
-calc = calcoohija.CalculadoraHija()
-opera = operacion.calcplus()
-resultado = 0
 
-with open(sys.argv[1]) as fichero:
-    contenido = csv.reader(fichero)
+if __name__ == "__main__":
 
-    for row in contenido:
-     opera.operacion(row)
+    with open(sys.argv[1]) as fichero:
+        contenido = csv.reader(fichero)
 
-    resultado = operacion(dato)
+        for linea in contenido:
+            #print(linea)
+            calcplus.operacion(linea)
