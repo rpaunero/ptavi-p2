@@ -12,5 +12,4 @@ if __name__ == "__main__":
         contenido = csv.reader(fichero)
 
         for linea in contenido:
-            #print(linea)
             calcplus.operacion(linea)
