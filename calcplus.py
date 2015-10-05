@@ -9,6 +9,7 @@ def operacion(dato):
     dicc = {"suma": calc.plus, "resta": calc.minus,
             "multiplica": calc.mult, "divide": calc.div}
 
+    print(dato)
     if dato[0] == "suma":
         func = calc.plus
     elif dato[0] == "resta":
@@ -26,6 +27,7 @@ def operacion(dato):
             print("Error de valor en esta línea")
             break
     print(resultado)
+
 
 fichero = sys.argv[1]
 fich = open(fichero, 'r')
