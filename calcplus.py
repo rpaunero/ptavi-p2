@@ -24,7 +24,6 @@ for linea in lineas:
             resultado = calc.minus(int(resultado), int(elemento))
         print(resultado)
     if dato[0] == "divide":
-        #resultado = calc.div(int(dato[1]), int(dato[2]))
         resultado = dato[1]
         for elemento in dato[2:]:
             if elemento == 0:
