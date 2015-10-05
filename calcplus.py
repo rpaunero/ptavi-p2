@@ -9,7 +9,6 @@ def operacion(dato):
     dicc = {"suma": calc.plus, "resta": calc.minus,
             "multiplica": calc.mult, "divide": calc.div}
 
-    print(dato)
     if dato[0] == "suma":
         func = calc.plus
     elif dato[0] == "resta":
