@@ -4,6 +4,7 @@
 import sys
 import calcoohija
 
+
 fichero = sys.argv[1]
 fich = open(fichero, 'r')
 lineas = fich.readlines()
