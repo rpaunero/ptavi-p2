@@ -6,6 +6,7 @@ import calcoohija
 
 calc = calcoohija.CalculadoraHija()
 
+
 def operacion(dato):
     dicc = {"suma": calc.plus, "resta": calc.minus,
             "multiplica": calc.mult, "divide": calc.div}
@@ -32,8 +33,6 @@ if __name__ == "__main__":
     fichero = sys.argv[1]
     fich = open(fichero, 'r')
     lineas = fich.readlines()
-    #calc = calcoohija.CalculadoraHija()
-
 
     resultado = 0
     for linea in lineas:
